@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { Menu, X, Terminal, ExternalLink } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';

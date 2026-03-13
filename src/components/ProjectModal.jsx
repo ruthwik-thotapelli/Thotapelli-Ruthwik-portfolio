@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect, Fragment } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   X, Github, ExternalLink, Shield, Cpu, Layers, Workflow, 
@@ -120,7 +120,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                   {project.architecture.steps.map((step, idx) => {
                     const Icon = iconMap[step.icon] || Layers;
                     return (
-                      <React.Fragment key={idx}>
+                      <Fragment key={idx}>
                         <div className="flex flex-col items-center gap-3">
                           <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500/10 to-purple-600/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 shadow-xl">
                             <Icon size={32} />
@@ -136,7 +136,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                         {idx < project.architecture.steps.length - 1 && (
                           <div className="md:hidden w-px h-8 bg-gradient-to-b from-indigo-500/50 to-purple-600/50" />
                         )}
-                      </React.Fragment>
+                      </Fragment>
                     );
                   })}
                 </div>

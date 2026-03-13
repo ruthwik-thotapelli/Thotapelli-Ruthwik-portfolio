@@ -1,4 +1,3 @@
-import React from 'react';
 import { Github, Linkedin, Mail, ChevronUp, Heart, Terminal, Sparkles } from 'lucide-react';
 import { Link } from 'react-scroll';
 import { personalInfo } from '../data/portfolioData';

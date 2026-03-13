@@ -1,4 +1,3 @@
-import React from 'react';
 
 const TechBadge = ({ tech, icon: Icon }) => {
   return (

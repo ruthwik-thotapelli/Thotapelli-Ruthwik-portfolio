@@ -1,0 +1,31 @@
+﻿
+C:\Users\dell\OneDrive\Desktop\portfolio\src\components\About.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\dell\OneDrive\Desktop\portfolio\src\components\Contact.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\dell\OneDrive\Desktop\portfolio\src\components\Experience.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u          no-unused-vars
+  3:23  error  'certifications' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\dell\OneDrive\Desktop\portfolio\src\components\Hero.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\dell\OneDrive\Desktop\portfolio\src\components\Navbar.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\dell\OneDrive\Desktop\portfolio\src\components\ProjectModal.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\dell\OneDrive\Desktop\portfolio\src\components\Projects.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\dell\OneDrive\Desktop\portfolio\src\components\Resume.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\dell\OneDrive\Desktop\portfolio\src\components\Skills.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+Γ£û 10 problems (10 errors, 0 warnings)
+
