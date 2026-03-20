@@ -30,12 +30,12 @@ const usps = [
   },
 ];
 
-const getColorClasses = (color) => ({
-  bg: `bg-${color}-500/10`,
-  border: `border-${color}-500/20`,
-  text: `text-${color}-400`,
-  glow: `shadow-[0_0_30px_rgba(var(--color-${color}),0.1)]`,
-});
+// Helper for dynamic coloring
+const colorMap = {
+  cyan: { icon: 'icon-glow-blue', text: 'text-cyan-400', bg: 'bg-cyan-500/10' },
+  purple: { icon: 'icon-glow-purple', text: 'text-purple-400', bg: 'bg-purple-500/10' },
+  pink: { icon: 'icon-glow-cyan', text: 'text-pink-400', bg: 'bg-pink-500/10' },
+};
 
 const WhyMe = () => {
   return (
@@ -91,8 +91,12 @@ const WhyMe = () => {
               className="h-full"
             >
               <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} perspective={1000} scale={1.03} transitionSpeed={1500} gyroscope className="h-full">
-                <div className="group h-full p-8 bg-white/3 rounded-3xl border border-white/5 hover:border-white/10 hover:bg-white/5 transition-all cursor-default shadow-xl hover:shadow-[0_0_30px_rgba(6,182,212,0.15)]">
-                  <div className={`w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 text-cyan-400 group-hover:scale-110 transition-transform border border-white/10`}>
+                <div className="group h-full p-10 bg-white/3 rounded-[2.5rem] border border-white/5 hover:border-white/10 hover:bg-white/5 transition-all cursor-default shadow-xl relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className={`w-16 h-16 premium-icon-container ${colorMap[usp.color].icon} ${colorMap[usp.color].text} mb-8 group-hover:scale-110 transition-transform animate-premium-float`}>
+                    <div className="premium-icon-glare" />
+                    <div className={`absolute inset-0 ${colorMap[usp.color].bg} opacity-20`} />
                     {usp.icon}
                   </div>
                   <h3 className="text-lg font-bold text-white mb-3 tracking-tight">{usp.title}</h3>
@@ -111,8 +115,9 @@ const WhyMe = () => {
           className="text-center p-12 bg-white/3 rounded-3xl border border-white/5 relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5" />
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0088ff] to-[#0055ff] p-0.5 shadow-2xl shadow-blue-500/20 mx-auto mb-8">
-            <img src="/personal-logo.png" alt="logo" className="w-full h-full object-cover rounded-[0.9rem]" />
+          <div className="w-16 h-16 branded-logo-container mx-auto mb-8">
+            <div className="premium-icon-glare" />
+            <span className="text-4xl font-black text-white leading-none relative z-10 italic pr-0.5">R</span>
           </div>
           <h3 className="text-2xl md:text-3xl font-black text-white mb-4 tracking-tighter relative z-10">
             Ready for <span className="gradient-text">Production Roles</span>.

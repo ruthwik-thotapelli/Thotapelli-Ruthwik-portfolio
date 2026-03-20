@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { skills } from '../data/portfolioData';
-import { Code2, Globe, Layers, Database, Cpu, Users, Sparkles, BrainCircuit, Users2, Zap, Clock, MessageSquare, Network, LayoutTemplate, MousePointer2 } from 'lucide-react';
-import { SiC, SiCplusplus, SiHtml5, SiJavascript, SiBootstrap, SiTailwindcss, SiReact, SiNodedotjs, SiExpress, SiThreedotjs, SiMysql, SiMongodb, SiPostman, SiDocker, SiGit, SiGithub } from 'react-icons/si';
-import { FaJava, FaDatabase, FaReact, FaAws, FaCss3Alt } from 'react-icons/fa';
+import { Code2, Globe, Layers, Database, Cpu, Users, Sparkles, Zap, Clock, Network, MousePointer2 } from 'lucide-react';
+import { SiC, SiCplusplus, SiHtml5, SiJavascript, SiBootstrap, SiTailwindcss, SiReact, SiNodedotjs, SiExpress, SiThreedotjs, SiMysql, SiMongodb, SiPostman, SiDocker, SiGit, SiGithub, SiKubernetes, SiLinux } from 'react-icons/si';
+import { FaJava, FaDatabase, FaReact, FaAws, FaCss3Alt, FaNetworkWired } from 'react-icons/fa';
 import Tilt from 'react-parallax-tilt';
 
 const skillIconMap = {
@@ -21,7 +21,6 @@ const skillIconMap = {
   "Express.js": <SiExpress className="text-white" />,
   "Three.js": <SiThreedotjs className="text-white" />,
   "Recoil": <FaReact className="text-[#3578E5]" />,
-  "Aceternity UI": <LayoutTemplate className="text-violet-400" size={16} />,
   "DBMS": <FaDatabase className="text-[#336791]" />,
   "MySQL": <SiMysql className="text-[#4479A1]" />,
   "MongoDB": <SiMongodb className="text-[#47A248]" />,
@@ -30,14 +29,14 @@ const skillIconMap = {
   "Docker": <SiDocker className="text-[#2496ED]" />,
   "Git": <SiGit className="text-[#F05032]" />,
   "GitHub": <SiGithub className="text-white" />,
+  "Kubernetes": <SiKubernetes className="text-[#326CE5]" />,
+  "Cloud & DevOps Fundamentals": <FaAws className="text-[#FF9900]" />,
+  "Computer Networks": <FaNetworkWired className="text-cyan-400" size={16} />,
+  "Operating Systems": <SiLinux className="text-white" />,
   "UI/UX Design": <MousePointer2 className="text-pink-400" size={16} />,
-  "DevOps Fundamentals": <SiDocker className="text-cyan-500" size={16} />,
-  "Artificial Intelligence Fundamentals": <BrainCircuit className="text-purple-400" size={16} />,
   "Problem-Solving": <Zap className="text-amber-400" size={16} />,
   "Adaptability": <Sparkles className="text-emerald-400" size={16} />,
-  "Team Collaboration": <Users2 className="text-blue-400" size={16} />,
   "Time Management": <Clock className="text-rose-400" size={16} />,
-  "Effective Communication": <MessageSquare className="text-indigo-400" size={16} />
 };
 
 const categoryConfig = {
@@ -71,13 +70,14 @@ const SkillCard = ({ category, items, index }) => {
 
           <div className="p-8 relative z-10 flex flex-col h-full">
             {/* Header: Icon + Title */}
-            <div className="flex items-center gap-5 mb-8">
+            <div className="flex items-center gap-6 mb-10">
               <div 
-                className="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg border border-white/10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 relative overflow-hidden"
-                style={{ backgroundColor: `${color}15`, borderColor: `${color}30` }}
+                className="w-20 h-20 premium-icon-container group-hover:scale-110 transition-transform duration-500 animate-premium-float"
+                style={{ background: `${color}15`, borderColor: `${color}30` }}
               >
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ background: `radial-gradient(circle at center, ${color}40 0%, transparent 70%)` }} />
-                <Icon size={28} style={{ color }} className="relative z-10" />
+                <div className="premium-icon-glare" />
+                <div className="absolute inset-0 opacity-40" style={{ background: `radial-gradient(circle at center, ${color} 0%, transparent 70%)` }} />
+                <Icon size={32} style={{ color }} className="relative z-10 drop-shadow-lg" />
               </div>
               <div>
                 <h3 className="text-lg font-black text-white group-hover:text-white transition-colors uppercase tracking-tight" style={{ color }}>

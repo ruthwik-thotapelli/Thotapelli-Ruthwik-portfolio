@@ -136,8 +136,10 @@ const Experience = () => {
                   >
                     <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} perspective={1000} scale={1.03} transitionSpeed={1500} gyroscope className="h-full">
                       <div className="h-full glass-morphism p-8 rounded-[2rem] border border-white/5 transition-all duration-300 hover:border-amber-500/30 hover:bg-white/5 shadow-2xl group relative overflow-hidden">
-                        <div className="w-12 h-12 rounded-2xl bg-amber-500/10 flex items-center justify-center text-amber-500 mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 border border-amber-500/20">
-                          <Trophy size={24} />
+                        <div className="w-14 h-14 premium-icon-container icon-glow-amber bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500 mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 animate-premium-float">
+                          <div className="premium-icon-glare" />
+                          <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-transparent" />
+                          <Trophy size={28} className="relative z-10 drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]" />
                         </div>
                         <div>
                           <h4 className="text-lg font-black text-white mb-2 tracking-tight transition-colors uppercase">{ach.title}</h4>

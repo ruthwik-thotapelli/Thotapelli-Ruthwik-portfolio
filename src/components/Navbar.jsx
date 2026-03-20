@@ -31,10 +31,10 @@ const Navbar = ({ onToggleFastMode }) => {
             <motion.div 
               whileHover={{ rotate: 180, scale: 1.1 }}
               transition={{ type: "spring", stiffness: 260, damping: 20 }}
-              className="w-12 h-12 rounded-2xl bg-[#0088ff] flex items-center justify-center shadow-lg relative overflow-hidden group"
+              className="w-12 h-12 branded-logo-container transition-all duration-500 group"
             >
-              <span className="text-3xl font-black text-white leading-none relative z-10 italic pr-0.5">R</span>
-              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 pointer-events-none" />
+              <div className="premium-icon-glare" />
+              <span className="text-3xl font-black text-white leading-none relative z-10 italic pr-0.5 drop-shadow-lg">R</span>
             </motion.div>
             <span className="text-lg font-black text-white tracking-tight hidden sm:block">
               Ruthwik<span className="text-cyan-400">.</span>

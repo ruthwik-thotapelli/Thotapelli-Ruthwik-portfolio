@@ -55,7 +55,8 @@ const CaseStudy = ({ project, isOpen, onClose }) => {
               {/* Header Bar - Like a Navbar for the modal */}
               <div className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 md:py-6 px-6 md:px-12 flex justify-between items-center bg-black/40 backdrop-blur-xl border-b border-white/5`}>
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#0088ff] flex items-center justify-center shadow-lg relative overflow-hidden group">
+                  <div className="w-10 h-10 branded-logo-container group">
+                    <div className="premium-icon-glare" />
                     <span className="text-2xl font-black text-white leading-none relative z-10 italic pr-0.5">R</span>
                   </div>
                   <div className="flex flex-col">
@@ -207,7 +208,8 @@ const CaseStudy = ({ project, isOpen, onClose }) => {
                       return (
                         <div key={i} className="p-10 bg-white/[0.02] border border-white/5 rounded-2.5rem hover:bg-white/[0.04] transition-colors group relative overflow-hidden shadow-xl hover:shadow-[0_0_30px_rgba(244,63,94,0.1)]">
                           <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                          <div className="w-14 h-14 rounded-2xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all">
+                          <div className="w-16 h-16 premium-icon-container icon-glow-purple bg-rose-500/10 border border-rose-500/20 text-rose-400 mb-8 group-hover:scale-110 transition-all animate-premium-float">
+                            <div className="premium-icon-glare" />
                             <ChallengeIcon />
                           </div>
                           <h4 className="text-2xl font-black text-white mb-4 tracking-tight leading-snug">{ch.title}</h4>

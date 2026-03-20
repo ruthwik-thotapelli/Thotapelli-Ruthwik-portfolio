@@ -11,21 +11,21 @@ const About = () => {
       title: "Full-Stack Dev", 
       desc: "Specializing in the MERN stack for robust, responsive web solutions.",
       gradient: "from-blue-500 to-indigo-600",
-      border: "border-blue-500/20"
+      glowColor: "icon-glow-blue"
     },
     { 
       icon: <Server size={24} />, 
       title: "DevOps Focus", 
       desc: "Architecting automated CI/CD pipelines with AWS & Docker.",
       gradient: "from-purple-500 to-pink-600",
-      border: "border-purple-500/20"
+      glowColor: "icon-glow-purple"
     },
     { 
       icon: <ShieldCheck size={24} />, 
       title: "Security & Scale", 
       desc: "Ensuring applications are secure by design with JWT and RBAC.",
       gradient: "from-cyan-500 to-emerald-600",
-      border: "border-cyan-500/20"
+      glowColor: "icon-glow-cyan"
     },
   ];
 
@@ -49,12 +49,19 @@ const About = () => {
                   whileHover={{ x: 10, scale: 1.02 }}
                 >
                   <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} perspective={1000} scale={1.02} transitionSpeed={1500} gyroscope className="h-full w-full">
-                    <div className={`glass-morphism p-8 rounded-[2rem] border ${card.border} transition-all duration-300 flex gap-6 items-start group hover:bg-white/5 shadow-2xl`}>
-                      <div className={`p-4 rounded-2xl bg-gradient-to-br ${card.gradient} text-white shadow-xl group-hover:rotate-6 transition-transform duration-500`}>
-                        {card.icon}
+                    <div className={`glass-morphism p-8 rounded-[2.5rem] border border-white/10 transition-all duration-300 flex gap-8 items-center group hover:bg-white/5 shadow-2xl relative overflow-hidden`}>
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      
+                      <div className={`w-20 h-20 premium-icon-container ${card.glowColor} group-hover:scale-110 transition-transform duration-500 flex-shrink-0 animate-premium-float`} style={{ animationDelay: `${i * 0.5}s` }}>
+                        <div className="premium-icon-glare" />
+                        <div className={`absolute inset-0 bg-gradient-to-br ${card.gradient} opacity-20`} />
+                        <div className="relative z-10 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">
+                          {React.cloneElement(card.icon, { size: 32 })}
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="text-xl font-black text-white mb-2 tracking-tight group-hover:text-cyan-400 transition-colors">
+
+                      <div className="relative z-10">
+                        <h3 className="text-2xl font-black text-white mb-2 tracking-tight group-hover:text-cyan-400 transition-colors">
                           {card.title}
                         </h3>
                         <p className="text-slate-400 leading-relaxed text-sm font-medium">
@@ -85,9 +92,10 @@ const About = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0088ff] to-[#0055ff] p-0.5 shadow-2xl shadow-blue-500/20 group-hover:rotate-6 transition-transform duration-500 overflow-hidden"
+                className="w-16 h-16 branded-logo-container group-hover:rotate-6 transition-transform duration-500"
               >
-                <img src="/personal-logo.png" alt="logo" className="w-full h-full object-cover rounded-[0.9rem]" />
+                <div className="premium-icon-glare" />
+                <span className="text-4xl font-black text-white leading-none relative z-10 italic pr-0.5 drop-shadow-xl">R</span>
               </motion.div>
               <div className="absolute -inset-2 bg-blue-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>

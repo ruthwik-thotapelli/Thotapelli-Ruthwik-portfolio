@@ -22,15 +22,15 @@ export const skills = [
   },
   {
     category: "Frameworks & Libraries",
-    items: ["Bootstrap", "Tailwind CSS", "React.js", "Node.js"],
+    items: ["Bootstrap", "Tailwind CSS", "React.js", "Node.js", "Express.js"],
   },
   {
     category: "Databases & Tools",
-    items: ["DBMS", "MySQL", "MongoDB", "Postman", "AWS", "Docker", "Git", "GitHub"],
+    items: ["DBMS", "MySQL", "MongoDB", "Postman", "AWS", "Docker", "Kubernetes", "Git", "GitHub"],
   },
   {
     category: "Technical Skills",
-    items: ["UI/UX Design", "DevOps Fundamentals", "Artificial Intelligence Fundamentals"],
+    items: ["UI/UX Design", "Cloud & DevOps Fundamentals", "Computer Networks", "Operating Systems"],
   },
   {
     category: "Soft Skills",
@@ -42,7 +42,7 @@ export const projects = [
   {
     title: "TalentBridge",
     description: "Secure Enterprise Full Stack Hiring Platform",
-    date: "Jan 2026",
+    date: "Feb 2026",
     longDescription:
       "Developed a secure, enterprise-grade hiring platform to manage job postings, applications, and candidate workflows end-to-end. Implemented role-based access control, secure authentication, scalable REST APIs, and an ATS-style resume screening and scoring system to improve recruitment efficiency.",
     problem: "Traditional hiring platforms lack integrated technical screening, forcing recruiters to juggle multiple tools. ATS systems often fail to accurately score modern tech resumes.",
@@ -215,7 +215,7 @@ export const achievements = [
   },
   {
     title: "Problem-Solving Badge",
-    date: "Dec 2025",
+    date: "Jan 2025",
     description:
       "Earned a Problem-Solving Badge for completing 150+ consecutive days of DSA practice in 2025.",
   },

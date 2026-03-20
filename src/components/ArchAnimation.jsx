@@ -8,10 +8,11 @@ const Node = ({ icon: Icon, label, isActive, colorClass }) => (
     animate={{ scale: 1, opacity: 1 }}
     className={`flex flex-col items-center gap-2 relative z-10 ${isActive ? '' : 'opacity-50 blur-[1px]'} transition-all duration-300`}
   >
-    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center border-2 shadow-lg mb-2 ${
-      isActive ? `${colorClass} shadow-${colorClass.split('-')[1]}-500/50` : 'border-white/10 bg-white/5 text-slate-500'
+    <div className={`w-16 h-16 premium-icon-container group ${
+      isActive ? `${colorClass} ${colorClass.includes('cyan') ? 'icon-glow-blue' : colorClass.includes('indigo') ? 'icon-glow-purple' : 'shadow-lg'}` : 'border-white/10 bg-white/5 text-slate-500'
     }`}>
-      <Icon size={28} />
+      <div className="premium-icon-glare" />
+      <Icon size={24} className="relative z-10" />
     </div>
     <span className="text-[10px] font-bold text-white uppercase tracking-wider bg-black/50 px-2 py-1 rounded backdrop-blur-sm">{label}</span>
   </motion.div>
