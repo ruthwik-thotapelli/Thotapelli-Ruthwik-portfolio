@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { skills } from '../data/portfolioData';
 import { Code2, Globe, Layers, Database, Cpu, Users, Sparkles, BrainCircuit, Users2, Zap, Clock, MessageSquare, Network, LayoutTemplate, MousePointer2 } from 'lucide-react';
-import { SiC, SiCplusplus, SiHtml5, SiCss3, SiJavascript, SiBootstrap, SiTailwindcss, SiReact, SiNodedotjs, SiExpress, SiThreejs, SiMysql, SiMongodb, SiPostman, SiAmazonwebservices, SiDocker, SiGit, SiGithub } from 'react-icons/si';
-import { FaJava, FaDatabase, FaReact } from 'react-icons/fa';
+import { SiC, SiCplusplus, SiHtml5, SiJavascript, SiBootstrap, SiTailwindcss, SiReact, SiNodedotjs, SiExpress, SiThreedotjs, SiMysql, SiMongodb, SiPostman, SiDocker, SiGit, SiGithub } from 'react-icons/si';
+import { FaJava, FaDatabase, FaReact, FaAws, FaCss3Alt } from 'react-icons/fa';
 import Tilt from 'react-parallax-tilt';
 
 const skillIconMap = {
@@ -12,21 +12,21 @@ const skillIconMap = {
   "Java": <FaJava className="text-[#007396]" />,
   "Data Structures and Algorithms": <Network className="text-cyan-400" size={16} />,
   "HTML": <SiHtml5 className="text-[#E34F26]" />,
-  "CSS": <SiCss3 className="text-[#1572B6]" />,
+  "CSS": <FaCss3Alt className="text-[#1572B6]" />,
   "JavaScript": <SiJavascript className="text-[#F7DF1E]" />,
   "Bootstrap": <SiBootstrap className="text-[#7952B3]" />,
   "Tailwind CSS": <SiTailwindcss className="text-[#06B6D4]" />,
   "React.js": <SiReact className="text-[#61DAFB]" />,
   "Node.js": <SiNodedotjs className="text-[#339933]" />,
   "Express.js": <SiExpress className="text-white" />,
-  "Three.js": <SiThreejs className="text-white" />,
+  "Three.js": <SiThreedotjs className="text-white" />,
   "Recoil": <FaReact className="text-[#3578E5]" />,
   "Aceternity UI": <LayoutTemplate className="text-violet-400" size={16} />,
   "DBMS": <FaDatabase className="text-[#336791]" />,
   "MySQL": <SiMysql className="text-[#4479A1]" />,
   "MongoDB": <SiMongodb className="text-[#47A248]" />,
   "Postman": <SiPostman className="text-[#FF6C37]" />,
-  "AWS": <SiAmazonwebservices className="text-[#FF9900]" />,
+  "AWS": <FaAws className="text-[#FF9900]" />,
   "Docker": <SiDocker className="text-[#2496ED]" />,
   "Git": <SiGit className="text-[#F05032]" />,
   "GitHub": <SiGithub className="text-white" />,
