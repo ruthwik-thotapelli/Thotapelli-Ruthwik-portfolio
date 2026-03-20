@@ -229,29 +229,31 @@ const Hero = () => {
                     duration={500}
                     offset={-70}
                     onMouseMove={handleMouseMove}
-                    className="premium-glow-button flex items-center justify-center gap-3 text-white px-10 py-5 rounded-2xl font-black transition-all hover:scale-105 active:scale-95 cursor-pointer text-sm uppercase tracking-widest"
+                    className="hyper-glow-primary flex items-center justify-center gap-3 text-white px-12 py-6 rounded-2xl font-black transition-all cursor-pointer text-base uppercase tracking-[0.2em] group"
                   >
-                    <Sparkles size={18} className="text-white animate-pulse" /> View Projects
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    <Sparkles size={20} className="text-white animate-pulse" /> View Projects
+                    <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-500" />
                   </Link>
 
                   <a
                     href={personalInfo.resume}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="premium-glass-button flex items-center gap-3 text-white px-10 py-5 rounded-2xl font-bold text-sm uppercase tracking-widest"
+                    className="neon-border-button flex items-center gap-3 text-white px-12 py-6 rounded-2xl font-bold text-base uppercase tracking-[0.2em]"
                   >
-                    Resume <FileText size={18} className="text-cyan-400" />
+                    Resume <FileText size={20} className="text-cyan-400 group-hover:rotate-12 transition-transform" />
                   </a>
 
-                  <div className="flex gap-4 ml-0 lg:ml-2">
+                  <div className="flex gap-6 ml-0 lg:ml-4">
                     <a href={personalInfo.github} target="_blank" rel="noopener noreferrer"
-                      className="social-icon-glow github w-14 h-14 rounded-2xl text-slate-400 transition-all">
-                      <Github size={22} />
+                      className="relative w-16 h-16 flex items-center justify-center bg-white/5 rounded-2xl text-slate-400 hover:text-white transition-all hover:scale-110 border border-white/10 github-halo group">
+                      <div className="halo-glow" />
+                      <Github size={24} className="relative z-10" />
                     </a>
                     <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer"
-                      className="social-icon-glow linkedin w-14 h-14 rounded-2xl text-slate-400 transition-all">
-                      <Linkedin size={22} />
+                      className="relative w-16 h-16 flex items-center justify-center bg-white/5 rounded-2xl text-slate-400 hover:text-blue-400 transition-all hover:scale-110 border border-white/10 linkedin-halo group">
+                      <div className="halo-glow" />
+                      <Linkedin size={24} className="relative z-10" />
                     </a>
                   </div>
                 </motion.div>
@@ -268,11 +270,11 @@ const Hero = () => {
                   {/* Outer Premium Glow */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/60 to-purple-600/60 rounded-[3rem] blur-[80px] opacity-60 animate-pulse-glow" />
                   
-                  {/* Floating glassmorphism frame */}
-                  <Tilt tiltMaxAngleX={12} tiltMaxAngleY={12} perspective={1000} scale={1.03} transitionSpeed={2000} gyroscope className="w-full h-full">
-                    <div className="w-full h-full relative z-10 p-[2px] rounded-[3rem] bg-gradient-to-br from-white/30 via-white/5 to-white/10 animate-float shadow-[0_0_50px_rgba(0,0,0,0.6)] overflow-hidden">
+                  {/* Floating glassmorphism frame with hyper-glow */}
+                  <Tilt tiltMaxAngleX={15} tiltMaxAngleY={15} perspective={1200} scale={1.05} transitionSpeed={2500} gyroscope className="w-full h-full">
+                    <div className="hyper-glow-frame w-full h-full animate-float shadow-2xl overflow-hidden">
                       {/* Inner Glass Background */}
-                      <div className="absolute inset-0 bg-[#050816]/30 backdrop-blur-2xl z-0" />
+                      <div className="absolute inset-0 bg-[#050816]/40 backdrop-blur-3xl z-0" />
                       
                       {/* Inner border detail */}
                       <div className="absolute inset-3 border border-white/10 rounded-[2.2rem] z-20 pointer-events-none" />
