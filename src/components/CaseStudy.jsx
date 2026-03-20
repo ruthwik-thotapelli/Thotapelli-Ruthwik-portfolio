@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  X, Github, ExternalLink, Play, Terminal
+  X, Github, ExternalLink, Play, Terminal, Shield, FileCode, Cloud, Zap, Cpu, Server, Lock, Database, Layout, Workflow, Package, Activity, Share2, Github as GithubIcon, 
 } from 'lucide-react';
+import { FaAws, FaShieldAlt, FaBolt, FaSearch, FaCloud } from 'react-icons/fa';
 import ArchAnimation from './ArchAnimation';
 import DemoSimulation from './DemoSimulation';
 
@@ -194,16 +195,26 @@ const CaseStudy = ({ project, isOpen, onClose }) => {
                 >
                   <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter mb-10">Technical Challenges</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {project.challenges && project.challenges.map((ch, i) => (
-                      <div key={i} className="p-10 bg-white/[0.02] border border-white/5 rounded-[2.5rem] hover:bg-white/[0.04] transition-colors group relative overflow-hidden shadow-xl hover:shadow-[0_0_30px_rgba(244,63,94,0.1)]">
-                        <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                        <div className="w-14 h-14 rounded-2xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all">
-                          <Terminal size={24} />
+                    {project.challenges && project.challenges.map((ch, i) => {
+                      const ChallengeIcon = () => {
+                         if (ch.icon === "Shield") return <FaShieldAlt size={24} className="text-rose-400" />;
+                         if (ch.icon === "FileSearch") return <FaSearch size={22} className="text-rose-400" />;
+                         if (ch.icon === "Cloud") return <FaCloud size={24} className="text-rose-400" />;
+                         if (ch.icon === "Zap") return <FaBolt size={24} className="text-rose-400" />;
+                         return <Terminal size={24} />;
+                      };
+
+                      return (
+                        <div key={i} className="p-10 bg-white/[0.02] border border-white/5 rounded-2.5rem hover:bg-white/[0.04] transition-colors group relative overflow-hidden shadow-xl hover:shadow-[0_0_30px_rgba(244,63,94,0.1)]">
+                          <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                          <div className="w-14 h-14 rounded-2xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all">
+                            <ChallengeIcon />
+                          </div>
+                          <h4 className="text-2xl font-black text-white mb-4 tracking-tight leading-snug">{ch.title}</h4>
+                          <p className="text-slate-400 leading-relaxed font-medium">{ch.solution}</p>
                         </div>
-                        <h4 className="text-2xl font-black text-white mb-4 tracking-tight leading-snug">{ch.title}</h4>
-                        <p className="text-slate-400 leading-relaxed font-medium">{ch.solution}</p>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </motion.div>
 

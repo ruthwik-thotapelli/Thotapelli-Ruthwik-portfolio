@@ -93,11 +93,13 @@ export const projects = [
     challenges: [
       {
         title: "Secure Auth Flow",
-        solution: "Implemented persistent JWT sessions with refresh tokens and fine-grained RBAC hooks."
+        solution: "Implemented persistent JWT sessions with refresh tokens and fine-grained RBAC hooks.",
+        icon: "Shield"
       },
       {
         title: "Resume Parsing",
-        solution: "Developed a custom scoring algorithm to normalize diverse file formats into comparable metrics."
+        solution: "Developed a custom scoring algorithm to normalize diverse file formats into comparable metrics.",
+        icon: "FileSearch"
       }
     ],
     github: "https://github.com/ruthwik-thotapelli/TalentBridge-Secure-Enterprise-Full-Stack-Hiring-Platform",
@@ -159,11 +161,13 @@ export const projects = [
     challenges: [
       {
         title: "Auto-Scaling Logic",
-        solution: "Configured dynamic scaling policies based on real-time CPU utilization metrics."
+        solution: "Configured dynamic scaling policies based on real-time CPU utilization metrics.",
+        icon: "Cloud"
       },
       {
         title: "Zero-Downtime",
-        solution: "Implemented blue-green deployment strategies using the Application Load Balancer."
+        solution: "Implemented blue-green deployment strategies using the Application Load Balancer.",
+        icon: "Zap"
       }
     ],
     github: "https://github.com/ruthwik-thotapelli/CloudForge-AWS-DevOps-CI-CD-Infrastructure-for-Secure-Deployments",
