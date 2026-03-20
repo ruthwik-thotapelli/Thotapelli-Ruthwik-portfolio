@@ -32,7 +32,7 @@ const JourneyTimeline = () => {
             <div className="inline-flex items-center gap-2 px-6 py-2 mb-6 text-xs font-bold text-cyan-400 bg-cyan-500/10 rounded-full uppercase tracking-widest border border-cyan-500/30 shadow-[0_0_20px_rgba(6,182,212,0.2)]">
               <Rocket size={14} /> My Engineering Journey
             </div>
-            <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter">
               From Syntax to <span className="text-cyan-400">Systems.</span>
             </h2>
           </motion.div>
@@ -67,31 +67,27 @@ const JourneyTimeline = () => {
                   </div>
 
                   {/* Icon Node */}
-                  <div className="absolute left-6 md:left-1/2 -translate-x-1/2 z-10 w-full md:w-auto">
+                  <div className="absolute left-6 md:left-1/2 -translate-x-1/2 z-10">
                     <motion.div 
                       initial={{ scale: 0, rotate: -45 }} 
                       whileInView={{ scale: 1, rotate: 0 }} 
                       viewport={{ once: true, margin: "-100px" }}
-                      className={`w-14 h-14 rounded-2xl ${step.bg} border-2 ${step.border} flex items-center justify-center shadow-2xl backdrop-blur-md absolute left-0 md:relative bg-[#050816]`}
-                      style={{ marginLeft: '-22px' }}  // center on the line for mobile
+                      className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl ${step.bg} border-2 ${step.border} flex items-center justify-center shadow-2xl backdrop-blur-md bg-[#050816] transition-transform`}
                     >
-                      <Icon size={24} className={step.color} />
+                      <Icon size={20} className={`sm:size-24 ${step.color}`} />
                     </motion.div>
                   </div>
 
-                  {/* Right Side (Empty on Even for Desktop) */}
-                  <div className={`w-full pl-20 md:pl-0 md:w-[45%] ${isEven ? 'md:hidden' : 'md:text-left md:pl-12'}`}>
-                    {(!isEven || true) && (
-                      <motion.div 
-                        initial={{ opacity: 0, x: 50 }} 
-                        whileInView={{ opacity: 1, x: 0 }} 
-                        viewport={{ once: true, margin: "-100px" }}
-                        className={isEven ? "md:hidden" : ""}
-                      >
-                        <h3 className={`text-2xl font-black text-white mb-3 tracking-tight ${step.color}`}>{step.title}</h3>
-                        <p className="text-slate-400 text-lg leading-relaxed font-medium">{step.desc}</p>
-                      </motion.div>
-                    )}
+                  {/* Content (Desktop Left / Mobile Right) */}
+                  <div className={`w-full pl-16 sm:pl-20 md:pl-0 md:w-[45%] ${isEven ? 'md:hidden' : 'md:text-left md:pl-12'}`}>
+                    <motion.div 
+                      initial={{ opacity: 0, x: 50 }} 
+                      whileInView={{ opacity: 1, x: 0 }} 
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <h3 className={`text-xl sm:text-2xl font-black text-white mb-2 sm:mb-3 tracking-tight ${step.color}`}>{step.title}</h3>
+                      <p className="text-slate-400 text-base sm:text-lg leading-relaxed font-medium">{step.desc}</p>
+                    </motion.div>
                   </div>
                   
                 </div>

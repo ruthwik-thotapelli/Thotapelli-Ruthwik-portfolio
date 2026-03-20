@@ -12,10 +12,10 @@ const MetricCard = ({ icon: Icon, value, label, color, delay }) => (
   >
     <div className={`absolute -right-6 -top-6 w-24 h-24 bg-${color}-500/10 rounded-full blur-2xl group-hover:bg-${color}-500/20 transition-all`} />
     <div className="flex items-center gap-4 mb-4">
-      <div className={`w-12 h-12 rounded-2xl bg-${color}-500/10 flex items-center justify-center text-${color}-400 border border-${color}-500/20 group-hover:scale-110 transition-transform`}>
-        <Icon size={24} />
+      <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-${color}-500/10 flex items-center justify-center text-${color}-400 border border-${color}-500/20 group-hover:scale-110 transition-transform`}>
+        <Icon size={20} className="sm:size-24" />
       </div>
-      <span className="text-3xl font-black text-white tracking-tighter">{value}</span>
+      <span className="text-2xl sm:text-3xl font-black text-white tracking-tighter">{value}</span>
     </div>
     <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">{label}</p>
   </motion.div>
@@ -35,8 +35,8 @@ const MetricsDashboard = () => {
               Engineering <span className="text-cyan-400">Velocity</span>.
             </h2>
           </div>
-          <div className="text-right">
-            <p className="text-sm text-slate-400 max-w-sm ml-auto font-medium">Aggregated data representing continuous integration, lines of code, and deployment consistency.</p>
+          <div className="text-center md:text-right w-full md:w-auto">
+            <p className="text-sm text-slate-400 max-w-sm mx-auto md:ml-auto font-medium">Aggregated data representing continuous integration, lines of code, and deployment consistency.</p>
           </div>
         </div>
 

@@ -17,15 +17,15 @@ const Footer = () => {
           {/* Brand/About Section */}
           <div className="lg:col-span-5 space-y-10">
             <Link to="hero" smooth={true} duration={500} className="cursor-pointer group flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-xl group-hover:rotate-12 transition-transform duration-300">
-                <Terminal size={24} />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-xl group-hover:rotate-12 transition-transform duration-300">
+                <Terminal size={20} className="sm:size-24" />
               </div>
-              <span className="text-3xl font-black text-white tracking-widest uppercase">
+              <span className="text-2xl sm:text-3xl font-black text-white tracking-widest uppercase">
                 Thotapelli Ruthwik<span className="text-indigo-500">.</span>
               </span>
             </Link>
 
-            <p className="text-slate-500 text-lg leading-relaxed max-w-sm font-medium">
+            <p className="text-slate-500 text-base sm:text-lg leading-relaxed max-w-sm font-medium">
               Developing secure, scalable, and high-performance solutions for the modern web. Dedicated to engineering excellence and production reliability.
             </p>
 
@@ -89,7 +89,7 @@ const Footer = () => {
 
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="mt-6 flex items-center gap-3 text-indigo-400 font-bold text-sm hover:gap-5 transition-all group py-4 px-6 glass rounded-2xl border border-white/5 w-fit"
+                className="mt-6 flex items-center gap-3 text-indigo-400 font-bold text-sm hover:gap-5 transition-all group py-3 px-5 sm:py-4 sm:px-6 glass rounded-2xl border border-white/5 w-fit"
               >
                 Reach for the sky <ChevronUp size={20} className="group-hover:-translate-y-2 transition-transform duration-300" />
               </button>

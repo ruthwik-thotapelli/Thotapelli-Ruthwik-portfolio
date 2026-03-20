@@ -8,12 +8,12 @@ const ThinkingCard = ({ icon: Icon, title, description, keywords, index }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.6, delay: index * 0.15 }}
-    className="p-8 rounded-[2.5rem] bg-gradient-to-br from-white/5 to-transparent border border-white/5 hover:border-cyan-500/30 hover:shadow-[0_0_40px_rgba(6,182,212,0.1)] transition-all group"
+    className="p-6 sm:p-8 rounded-3xl sm:rounded-[2.5rem] bg-gradient-to-br from-white/5 to-transparent border border-white/5 hover:border-cyan-500/30 hover:shadow-[0_0_40px_rgba(6,182,212,0.1)] transition-all group"
   >
-    <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-cyan-400 mb-8 border border-white/5 group-hover:scale-110 group-hover:bg-cyan-500/10 transition-transform">
-      <Icon size={24} />
+    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-white/5 flex items-center justify-center text-cyan-400 mb-6 sm:mb-8 border border-white/5 group-hover:scale-110 group-hover:bg-cyan-500/10 transition-transform">
+      <Icon size={20} className="sm:size-24" />
     </div>
-    <h3 className="text-2xl font-black text-white mb-4 tracking-tight">{title}</h3>
+    <h3 className="text-xl sm:text-2xl font-black text-white mb-4 tracking-tight">{title}</h3>
     <p className="text-slate-400 text-sm leading-relaxed mb-8">{description}</p>
     
     <div className="flex flex-wrap gap-2">

@@ -17,10 +17,10 @@ const Experience = () => {
             <div className="inline-flex items-center gap-2 px-6 py-2 mb-6 text-xs font-bold text-cyan-400 glass-morphism rounded-full uppercase tracking-[0.3em] border border-cyan-500/30">
               <Award size={14} /> Professional Milestones
             </div>
-            <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter">
               Learning & <span className="gradient-text">Growing</span>.
             </h2>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto font-medium">
+            <p className="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto font-medium">
               A journey of technical rigor, from academic foundations to <span className="text-white">production-level</span> engineering.
             </p>
           </motion.div>
@@ -45,18 +45,18 @@ const Experience = () => {
                   className="group"
                 >
                   <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} perspective={1000} scale={1.01} transitionSpeed={1500} gyroscope>
-                    <div className="glass-morphism p-10 rounded-[2.5rem] border border-white/5 transition-all duration-300 hover:border-cyan-500/30 hover:bg-white/5 shadow-2xl relative overflow-hidden">
+                    <div className="glass-morphism p-6 sm:p-10 rounded-3xl sm:rounded-[2.5rem] border border-white/5 transition-all duration-300 hover:border-cyan-500/30 hover:bg-white/5 shadow-2xl relative overflow-hidden">
                       <div className="flex flex-col sm:flex-row justify-between items-start mb-8 gap-4">
                         <div>
-                          <h4 className="text-2xl font-black text-white tracking-tight group-hover:text-cyan-400 transition-colors uppercase">{intern.title}</h4>
-                          <p className="text-cyan-400/60 font-black text-[10px] uppercase tracking-[0.2em] mt-1">{intern.type}</p>
+                          <h4 className="text-xl sm:text-2xl font-black text-white tracking-tight group-hover:text-cyan-400 transition-colors uppercase">{intern.title}</h4>
+                          <p className="text-cyan-400/60 font-black text-[9px] sm:text-[10px] uppercase tracking-[0.2em] mt-1">{intern.type}</p>
                         </div>
-                        <span className="px-4 py-2 bg-white/5 rounded-xl text-[10px] font-black text-slate-400 flex items-center gap-2 border border-white/10 uppercase tracking-widest">
+                        <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-white/5 rounded-xl text-[9px] sm:text-[10px] font-black text-slate-400 flex items-center gap-2 border border-white/10 uppercase tracking-widest">
                           <Calendar size={12} /> {intern.date}
                         </span>
                       </div>
                       
-                      <p className="text-slate-400 mb-8 leading-relaxed font-medium text-sm border-l-2 border-cyan-500/50 pl-6">
+                      <p className="text-slate-400 mb-8 leading-relaxed font-medium text-xs sm:text-sm border-l-2 border-cyan-500/50 pl-4 sm:pl-6">
                         {intern.description}
                       </p>
                       
@@ -100,15 +100,15 @@ const Experience = () => {
                     transition={{ duration: 0.6, delay: index * 0.15 }}
                   >
                     <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} perspective={1000} scale={1.02} transitionSpeed={1500} gyroscope>
-                      <div className="glass-morphism p-10 rounded-[2.5rem] border border-white/5 transition-all duration-300 hover:border-pink-500/30 hover:bg-white/5 shadow-2xl group relative overflow-hidden">
-                        <div className="flex flex-col sm:flex-row gap-8 items-start">
-                          <div className="sm:w-1/4">
-                            <div className="text-pink-500/80 font-black text-xs uppercase tracking-[0.2em] mb-1">{edu.duration}</div>
-                            <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{edu.location}</div>
+                      <div className="glass-morphism p-6 sm:p-10 rounded-3xl sm:rounded-[2.5rem] border border-white/5 transition-all duration-300 hover:border-pink-500/30 hover:bg-white/5 shadow-2xl group relative overflow-hidden">
+                        <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-start">
+                          <div className="sm:w-1/3">
+                            <div className="text-pink-500/80 font-black text-[10px] sm:text-xs uppercase tracking-[0.2em] mb-1">{edu.duration}</div>
+                            <div className="text-[9px] sm:text-[10px] font-black text-slate-500 uppercase tracking-widest">{edu.location}</div>
                           </div>
-                          <div className="sm:w-3/4">
-                            <h4 className="text-2xl font-black text-white mb-2 leading-tight group-hover:text-pink-500 transition-colors uppercase">{edu.institution}</h4>
-                            <div className="text-white/60 font-black text-xs mb-4 tracking-widest uppercase">
+                          <div className="sm:w-2/3">
+                            <h4 className="text-xl sm:text-2xl font-black text-white mb-2 leading-tight group-hover:text-pink-500 transition-colors uppercase">{edu.institution}</h4>
+                            <div className="text-white/60 font-black text-[10px] sm:text-xs mb-4 tracking-widest uppercase">
                               {edu.degree} <span className="text-slate-500 mx-2">/</span> <span className="text-pink-500">{edu.score}</span>
                             </div>
                           </div>

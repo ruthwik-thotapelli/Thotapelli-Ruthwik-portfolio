@@ -22,10 +22,10 @@ const Certifications = () => {
             <div className="inline-flex items-center gap-2 px-6 py-2 mb-6 text-xs font-bold text-emerald-400 glass-morphism rounded-full uppercase tracking-[0.3em] border border-emerald-500/30">
               <ShieldCheck size={14} /> Validated Expertise
             </div>
-            <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter">
               Licenses & <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Certifications</span>.
             </h2>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto font-medium">
+            <p className="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto font-medium">
               Continuous learning and professional validations from recognized industry institutions.
             </p>
           </motion.div>
@@ -41,15 +41,15 @@ const Certifications = () => {
               transition={{ duration: 0.6, delay: index * 0.15 }}
             >
               <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} perspective={1000} scale={1.02} transitionSpeed={1500} gyroscope>
-                <div className="glass-morphism p-8 md:p-10 rounded-[2.5rem] border border-white/5 transition-all duration-300 hover:border-emerald-500/30 hover:bg-white/5 shadow-2xl group relative overflow-hidden h-full flex flex-col justify-between">
+                <div className="glass-morphism p-6 sm:p-10 rounded-3xl sm:rounded-[2.5rem] border border-white/5 transition-all duration-300 hover:border-emerald-500/30 hover:bg-white/5 shadow-2xl group relative overflow-hidden h-full flex flex-col justify-between">
                   
                   {/* Hover Glow Effect */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-[60px] group-hover:bg-emerald-500/20 transition-all duration-500" />
                   
                   <div>
                     <div className="flex justify-between items-start mb-6">
-                      <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-inner">
-                        <Award size={24} />
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-inner">
+                        <Award size={20} className="sm:size-24" />
                       </div>
                       
                       {cert.link && cert.link !== "#" && (
@@ -64,7 +64,7 @@ const Certifications = () => {
                       )}
                     </div>
                     
-                    <h3 className="text-2xl font-black text-white mb-3 tracking-tight group-hover:text-emerald-400 transition-colors uppercase leading-snug">
+                    <h3 className="text-xl sm:text-2xl font-black text-white mb-3 tracking-tight group-hover:text-emerald-400 transition-colors uppercase leading-snug">
                       {cert.name}
                     </h3>
                     

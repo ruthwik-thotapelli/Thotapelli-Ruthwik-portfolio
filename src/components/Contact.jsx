@@ -63,10 +63,10 @@ const Contact = () => {
             <div className="inline-flex items-center gap-2 px-6 py-2 mb-6 text-xs font-bold text-pink-500 glass-morphism rounded-full uppercase tracking-[0.3em] border border-pink-500/30">
               <MessageSquare size={14} /> Start a Conversation
             </div>
-            <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter">
               Let's build <span className="gradient-text">Something</span> Great.
             </h2>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto font-medium">
+            <p className="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto font-medium">
               Have a dedicated project in mind or just want to discuss some <span className="text-white">high-level tech</span>? My inbox is always open.
             </p>
           </motion.div>
@@ -89,10 +89,10 @@ const Contact = () => {
                     href={opt.href}
                     target={opt.href.startsWith('http') ? "_blank" : undefined}
                     rel={opt.href.startsWith('http') ? "noopener noreferrer" : undefined}
-                    className={`flex items-center gap-8 glass-morphism p-8 rounded-[2.5rem] border ${opt.border} transition-all duration-300 group hover:bg-white/5 shadow-2xl`}
+                    className={`flex items-center gap-4 sm:gap-8 glass-morphism p-6 sm:p-8 rounded-3xl sm:rounded-[2.5rem] border ${opt.border} transition-all duration-300 group hover:bg-white/5 shadow-2xl`}
                   >
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${opt.gradient} text-white flex items-center justify-center shadow-xl group-hover:rotate-6 transition-all duration-500`}>
-                      {opt.icon}
+                    <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br ${opt.gradient} text-white flex items-center justify-center shadow-xl group-hover:rotate-6 transition-all duration-500`}>
+                      {React.cloneElement(opt.icon, { size: window.innerWidth < 640 ? 20 : 24 })}
                     </div>
                     <div>
                       <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-1">{opt.title}</h4>
@@ -102,14 +102,14 @@ const Contact = () => {
                 </Tilt>
               ))}
               
-              <div className="glass-morphism p-10 rounded-[3rem] border border-white/5 shadow-2xl relative overflow-hidden group">
-                <div className="relative z-10 flex items-center gap-6">
-                  <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20">
-                    <MapPin size={24} />
+              <div className="glass-morphism p-6 sm:p-10 rounded-3xl sm:rounded-[3rem] border border-white/5 shadow-2xl relative overflow-hidden group">
+                <div className="relative z-10 flex items-center gap-4 sm:gap-6">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20">
+                    <MapPin size={20} className="sm:size-24" />
                   </div>
                   <div>
                     <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-1">Base of Operations</h4>
-                    <p className="text-white font-black text-base">Phagwara, Punjab (Hybrid/Remote)</p>
+                    <p className="text-white font-black text-sm sm:text-base">Phagwara, Punjab (Hybrid/Remote)</p>
                   </div>
                 </div>
               </div>
@@ -124,11 +124,11 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             className="lg:col-span-7"
           >
-            <div className="glass-morphism p-12 md:p-16 rounded-[4rem] border border-white/10 shadow-3xl relative overflow-hidden">
+            <div className="glass-morphism p-8 sm:p-12 md:p-16 rounded-3xl sm:rounded-[4rem] border border-white/10 shadow-3xl relative overflow-hidden">
               <div className="relative z-10 space-y-10">
                 <div className="space-y-2">
-                  <h3 className="text-3xl font-black text-white tracking-tighter flex items-center gap-4">
-                    Send a Message <Sparkles className="text-cyan-500" size={24} />
+                  <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tighter flex items-center gap-4">
+                    Send a Message <Sparkles className="text-cyan-500" size={20} />
                   </h3>
                   <p className="text-slate-400 font-medium">I'll get back to you within 24 hours.</p>
                 </div>
