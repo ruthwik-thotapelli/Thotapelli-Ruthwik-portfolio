@@ -67,7 +67,7 @@ const WhyMe = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-3 gap-6 mb-16"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16"
         >
           {stats.map((stat, i) => (
             <div key={i} className="text-center p-8 bg-white/3 rounded-3xl border border-white/5 hover:border-white/10 transition-all group">
@@ -111,7 +111,9 @@ const WhyMe = () => {
           className="text-center p-12 bg-white/3 rounded-3xl border border-white/5 relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5" />
-          <Code2 size={40} className="text-slate-700 mx-auto mb-6" />
+          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0088ff] to-[#0055ff] p-0.5 shadow-2xl shadow-blue-500/20 mx-auto mb-8">
+            <img src="/personal-logo.png" alt="logo" className="w-full h-full object-cover rounded-[0.9rem]" />
+          </div>
           <h3 className="text-2xl md:text-3xl font-black text-white mb-4 tracking-tighter relative z-10">
             Ready for <span className="gradient-text">Production Roles</span>.
           </h3>

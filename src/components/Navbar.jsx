@@ -89,47 +89,56 @@ const Navbar = ({ onToggleFastMode }) => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden px-4 mt-4"
-          >
-            <div className="glass-morphism border border-white/10 rounded-[2.5rem] p-8 space-y-4 shadow-3xl">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.to}
-                  smooth={true}
-                  duration={500}
-                  offset={-70}
-                  spy={true}
-                  activeClass="!text-cyan-400 bg-white/10 shadow-[0_0_20px_rgba(6,182,212,0.2)] border-cyan-500/30"
-                  onClick={() => setIsOpen(false)}
-                  className="block text-slate-400 hover:text-cyan-400 hover:bg-white/5 px-6 py-4 rounded-2xl text-sm font-black uppercase tracking-widest transition-all cursor-pointer border border-transparent hover:border-cyan-500/20"
+          <>
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[-1]"
+            />
+            <motion.div 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="md:hidden px-4 mt-4"
+            >
+              <div className="glass-morphism border border-white/10 rounded-[2.5rem] p-8 space-y-4 shadow-3xl">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    to={link.to}
+                    smooth={true}
+                    duration={500}
+                    offset={-70}
+                    spy={true}
+                    activeClass="!text-cyan-400 bg-white/10 shadow-[0_0_20px_rgba(6,182,212,0.2)] border-cyan-500/30"
+                    onClick={() => setIsOpen(false)}
+                    className="block text-slate-400 hover:text-cyan-400 hover:bg-white/5 px-6 py-4 rounded-2xl text-sm font-black uppercase tracking-widest transition-all cursor-pointer border border-transparent hover:border-cyan-500/20"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+                <a
+                  href={personalInfo.resume}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center bg-white text-black px-6 py-5 rounded-2xl text-sm font-black uppercase tracking-widest mt-6 shadow-2xl hover:bg-cyan-400 transition-colors"
                 >
-                  {link.name}
-                </Link>
-              ))}
-              <a
-                href={personalInfo.resume}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-white text-black px-6 py-5 rounded-2xl text-sm font-black uppercase tracking-widest mt-6 shadow-2xl hover:bg-cyan-400 transition-colors"
-              >
-                Cloud Resume
-              </a>
-              <button
-                onClick={() => {
-                  onToggleFastMode();
-                  setIsOpen(false);
-                }}
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-orange-500 text-black px-6 py-5 rounded-2xl text-sm font-black uppercase tracking-widest shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:scale-[1.02] transition-transform"
-              >
-                10s Fast View
-              </button>
-            </div>
-          </motion.div>
+                  Cloud Resume
+                </a>
+                <button
+                  onClick={() => {
+                    onToggleFastMode();
+                    setIsOpen(false);
+                  }}
+                  className="block w-full text-center bg-gradient-to-r from-amber-500 to-orange-500 text-black px-6 py-5 rounded-2xl text-sm font-black uppercase tracking-widest shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:scale-[1.02] transition-transform"
+                >
+                  10s Fast View
+                </button>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </nav>

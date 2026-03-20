@@ -38,7 +38,7 @@ const TerminalIntro = ({ onDone }) => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.4 }}
-          className="font-mono text-left bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl p-6 max-w-md mx-auto shadow-2xl"
+          className="font-mono text-left bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl p-6 w-[95%] sm:w-full max-w-md mx-auto shadow-2xl"
         >
           <div className="flex items-center gap-2 mb-4">
             <div className="w-3 h-3 rounded-full bg-red-500/80" />

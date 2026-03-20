@@ -53,7 +53,7 @@ const CaseStudy = ({ project, isOpen, onClose }) => {
 
             <div className="relative z-10">
               {/* Header Bar - Like a Navbar for the modal */}
-              <div className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6 px-12 flex justify-between items-center bg-black/40 backdrop-blur-xl border-b border-white/5`}>
+              <div className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 md:py-6 px-6 md:px-12 flex justify-between items-center bg-black/40 backdrop-blur-xl border-b border-white/5`}>
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-xl bg-[#0088ff] flex items-center justify-center shadow-lg relative overflow-hidden group">
                     <span className="text-2xl font-black text-white leading-none relative z-10 italic pr-0.5">R</span>
@@ -78,7 +78,7 @@ const CaseStudy = ({ project, isOpen, onClose }) => {
               <div className="h-24" />
 
               {/* Header Hero Section */}
-              <div className="relative h-[40vh] min-h-[350px] overflow-hidden mx-12 mt-4 rounded-[3rem] border border-white/10 shadow-3xl">
+              <div className="relative h-[30vh] md:h-[40vh] min-h-[300px] md:min-h-[350px] overflow-hidden mx-6 md:mx-12 mt-4 rounded-2xl md:rounded-[3rem] border border-white/10 shadow-3xl">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -93,8 +93,8 @@ const CaseStudy = ({ project, isOpen, onClose }) => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
                   >
-                    <h1 className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-4 drop-shadow-2xl">{project.title}</h1>
-                    <p className="text-xl md:text-2xl text-slate-200 font-medium max-w-2xl drop-shadow-lg">{project.description}</p>
+                    <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white tracking-tighter mb-4 drop-shadow-2xl">{project.title}</h1>
+                    <p className="text-base sm:text-xl md:text-2xl text-slate-200 font-medium max-w-2xl drop-shadow-lg">{project.description}</p>
                     
                     <div className="mt-8 flex flex-wrap gap-4 relative z-20">
                       <button 
@@ -119,7 +119,7 @@ const CaseStudy = ({ project, isOpen, onClose }) => {
               </div>
 
               {/* Engineering Story */}
-              <div className="px-12 py-16 max-w-6xl mx-auto space-y-28">
+              <div className="px-6 md:px-12 py-16 max-w-6xl mx-auto space-y-20 md:space-y-28">
                 
                 {/* Problem & Approach */}
                 <motion.div 
@@ -224,7 +224,7 @@ const CaseStudy = ({ project, isOpen, onClose }) => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
-                  className="p-12 md:p-16 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-[3rem] relative overflow-hidden text-center shadow-2xl"
+                  className="p-8 md:p-12 lg:p-16 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-2xl md:rounded-[3rem] relative overflow-hidden text-center shadow-2xl"
                 >
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-2xl max-h-2xl bg-cyan-500/20 rounded-full blur-[100px] pointer-events-none" />
                   <h3 className="text-sm font-black text-cyan-400 uppercase tracking-[0.3em] mb-6 relative z-10">Measurable Impact</h3>
