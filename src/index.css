@@ -215,6 +215,25 @@
     background: linear-gradient(90deg, transparent, rgba(129, 140, 248, 0.3), rgba(244, 114, 182, 0.2), transparent);
   }
 
+  .hyper-logo-shell {
+    @apply relative flex items-center justify-center p-[2px] overflow-hidden transition-all duration-500;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    background: linear-gradient(135deg, #0088ff, #00e1ff, #0088ff);
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease infinite;
+  }
+
+  .hyper-logo-glass {
+    @apply relative flex items-center justify-center bg-[#050816] overflow-hidden;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    background: linear-gradient(135deg, rgba(0, 136, 255, 0.4), rgba(0, 50, 100, 0.8));
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 4px 15px rgba(255, 255, 255, 0.3);
+  }
+
   .section-transition {
     position: relative;
   }
@@ -297,81 +316,119 @@
     box-shadow: 0 0 30px rgba(245, 158, 11, 0.3), inset 0 0 15px rgba(245, 158, 11, 0.2);
   }
 
-  .hyper-glow-primary {
-    @apply relative overflow-hidden transition-all duration-700;
-    background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #06b6d4 100%);
-    background-size: 200% 200%;
-    animation: gradient-shift 3s linear infinite;
-    box-shadow: 0 0 20px rgba(6, 182, 212, 0.4), 0 0 40px rgba(59, 130, 246, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+  .premium-glow-button {
+    @apply relative overflow-hidden transition-all duration-500 shadow-[0_0_20px_rgba(6,182,212,0.2)];
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.8), rgba(59, 130, 246, 0.8));
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  .hyper-glow-primary::before {
+  .premium-glow-button::before {
     content: '';
-    @apply absolute inset-0 opacity-0 transition-opacity duration-500 bg-white/20;
-    filter: blur(20px);
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.4) 0%, transparent 60%);
   }
 
-  .hyper-glow-primary:hover {
-    @apply scale-105 -translate-y-1;
-    box-shadow: 0 0 50px rgba(6, 182, 212, 0.8), 0 0 20px rgba(255, 255, 255, 0.4);
-    border-color: rgba(255, 255, 255, 0.8);
-  }
-
-  .hyper-glow-primary:hover::before {
+  .premium-glow-button:hover::before {
     @apply opacity-100;
   }
 
-  .halo-glow {
-    @apply absolute -inset-4 rounded-full opacity-0 pointer-events-none transition-all duration-700 blur-2xl;
-    z-index: -1;
+  .premium-glow-button:hover {
+    @apply shadow-[0_0_40px_rgba(6,182,212,0.6)] -translate-y-1;
+    border-color: rgba(255, 255, 255, 0.4);
   }
 
-  .github-halo:hover .halo-glow {
-    @apply opacity-100 scale-150;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.5) 0%, transparent 70%);
+  .premium-glass-button {
+    @apply relative bg-white/5 backdrop-blur-md border border-white/10 transition-all duration-500 overflow-hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   }
 
-  .linkedin-halo:hover .halo-glow {
-    @apply opacity-100 scale-150;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.5) 0%, transparent 70%);
+  .premium-glass-button::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full transition-transform duration-700;
   }
 
-  .neon-border-button {
-    @apply relative bg-black/40 backdrop-blur-xl border-2 border-white/10 transition-all duration-500 overflow-hidden;
-    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05);
+  .premium-glass-button:hover::after {
+    @apply translate-x-full;
   }
 
-  .hyper-glow-frame {
-    @apply relative p-[3px] rounded-[3rem] transition-all duration-700;
-    background: linear-gradient(135deg, #06b6d4, #8b5cf6, #ec4899, #06b6d4);
-    background-size: 300% 300%;
-    animation: gradient-shift 5s ease infinite;
-    box-shadow: 0 0 40px rgba(6, 182, 212, 0.3), 0 0 80px rgba(139, 92, 246, 0.2);
+  .premium-glass-button:hover {
+    @apply bg-white/10 border-cyan-500/40 shadow-[0_0_25px_rgba(6,182,212,0.2)] -translate-y-1;
   }
 
-  .hyper-glow-frame:hover {
-    @apply scale-[1.02];
-    box-shadow: 0 0 60px rgba(6, 182, 212, 0.6), 0 0 100px rgba(236, 72, 153, 0.4);
+  .social-icon-glow {
+    @apply relative flex items-center justify-center bg-white/3 border border-white/5 transition-all duration-500 overflow-hidden;
   }
 
-  .diamond-terminal-shell {
-    @apply relative flex items-center justify-center p-px overflow-hidden;
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    background: linear-gradient(135deg, #a855f7, #3b82f6);
-    box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+  .social-icon-glow::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 transition-opacity duration-500;
   }
 
-  .diamond-terminal-glass {
-    @apply bg-[#050816] flex items-center justify-center;
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    width: calc(100% - 3px);
-    height: calc(100% - 3px);
+  .social-icon-glow:hover::before {
+    @apply opacity-100;
   }
 
-  .hyper-glow-text {
-    @apply font-black tracking-widest uppercase;
-    text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+  .social-icon-glow:hover {
+    @apply -translate-y-1.5 border-white/20 shadow-[0_10px_30px_rgba(0,0,0,0.5)];
+  }
+
+  .social-icon-glow.github:hover {
+    @apply shadow-[0_0_25px_rgba(255,100,255,0.2)] border-purple-500/30 text-white;
+  }
+
+  .social-icon-glow.linkedin:hover {
+    @apply shadow-[0_0_25px_rgba(59,130,246,0.3)] border-blue-500/30 text-blue-400;
+  }
+
+  /* Hyper-Premium Diamond Logo */
+  .hyper-logo-outer {
+    @apply relative flex items-center justify-center transition-all duration-700;
+    filter: drop-shadow(0 0 15px rgba(0, 136, 255, 0.4));
+  }
+
+  .hyper-logo-shell {
+    @apply relative flex items-center justify-center p-[2px] transition-all duration-500;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    background: linear-gradient(135deg, #0088ff, #00e1ff, #0088ff);
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease infinite;
+  }
+
+  .hyper-logo-glass {
+    @apply relative flex items-center justify-center bg-[#050816] overflow-hidden;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    background: linear-gradient(135deg, rgba(0, 136, 255, 0.4), rgba(0, 50, 100, 0.8));
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 4px 15px rgba(255, 255, 255, 0.3);
+  }
+
+  .hyper-logo-sheen {
+    @apply absolute inset-0 pointer-events-none;
+    background: linear-gradient(
+      105deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.6) 45%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 70%
+    );
+    background-size: 200% 200%;
+    animation: hyper-sheen 3s infinite;
+  }
+
+  @keyframes hyper-sheen {
+    0% { background-position: -150% -150%; }
+    100% { background-position: 150% 150%; }
+  }
+
+  .hyper-logo-outer:hover {
+    transform: scale(1.1) rotate(45deg); /* Spin to accent diamond shape */
+  }
+  
+  .hyper-logo-outer:hover span {
+    transform: rotate(-45deg); /* Keep R upright */
   }
 
 }
