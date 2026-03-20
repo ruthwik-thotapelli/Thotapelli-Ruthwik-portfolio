@@ -1,8 +1,44 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { skills } from '../data/portfolioData';
-import { Code2, Globe, Layers, Database, Cpu, Users, Sparkles } from 'lucide-react';
+import { Code2, Globe, Layers, Database, Cpu, Users, Sparkles, BrainCircuit, Users2, Zap, Clock, MessageSquare, Network, LayoutTemplate, MousePointer2 } from 'lucide-react';
+import { SiC, SiCplusplus, SiHtml5, SiCss3, SiJavascript, SiBootstrap, SiTailwindcss, SiReact, SiNodedotjs, SiExpress, SiThreejs, SiMysql, SiMongodb, SiPostman, SiAmazonwebservices, SiDocker, SiGit, SiGithub } from 'react-icons/si';
+import { FaJava, FaDatabase, FaReact } from 'react-icons/fa';
 import Tilt from 'react-parallax-tilt';
+
+const skillIconMap = {
+  "C": <SiC className="text-[#A8B9CC]" />,
+  "C++": <SiCplusplus className="text-[#00599C]" />,
+  "Java": <FaJava className="text-[#007396]" />,
+  "Data Structures and Algorithms": <Network className="text-cyan-400" size={16} />,
+  "HTML": <SiHtml5 className="text-[#E34F26]" />,
+  "CSS": <SiCss3 className="text-[#1572B6]" />,
+  "JavaScript": <SiJavascript className="text-[#F7DF1E]" />,
+  "Bootstrap": <SiBootstrap className="text-[#7952B3]" />,
+  "Tailwind CSS": <SiTailwindcss className="text-[#06B6D4]" />,
+  "React.js": <SiReact className="text-[#61DAFB]" />,
+  "Node.js": <SiNodedotjs className="text-[#339933]" />,
+  "Express.js": <SiExpress className="text-white" />,
+  "Three.js": <SiThreejs className="text-white" />,
+  "Recoil": <FaReact className="text-[#3578E5]" />,
+  "Aceternity UI": <LayoutTemplate className="text-violet-400" size={16} />,
+  "DBMS": <FaDatabase className="text-[#336791]" />,
+  "MySQL": <SiMysql className="text-[#4479A1]" />,
+  "MongoDB": <SiMongodb className="text-[#47A248]" />,
+  "Postman": <SiPostman className="text-[#FF6C37]" />,
+  "AWS": <SiAmazonwebservices className="text-[#FF9900]" />,
+  "Docker": <SiDocker className="text-[#2496ED]" />,
+  "Git": <SiGit className="text-[#F05032]" />,
+  "GitHub": <SiGithub className="text-white" />,
+  "UI/UX Design": <MousePointer2 className="text-pink-400" size={16} />,
+  "DevOps Fundamentals": <SiDocker className="text-cyan-500" size={16} />,
+  "Artificial Intelligence Fundamentals": <BrainCircuit className="text-purple-400" size={16} />,
+  "Problem-Solving": <Zap className="text-amber-400" size={16} />,
+  "Adaptability": <Sparkles className="text-emerald-400" size={16} />,
+  "Team Collaboration": <Users2 className="text-blue-400" size={16} />,
+  "Time Management": <Clock className="text-rose-400" size={16} />,
+  "Effective Communication": <MessageSquare className="text-indigo-400" size={16} />
+};
 
 const categoryConfig = {
   "Languages": { icon: Code2, color: "#06b6d4", gradient: "from-cyan-500/20 to-cyan-500/5" },
@@ -52,16 +88,21 @@ const SkillCard = ({ category, items, index }) => {
             </div>
 
             {/* Skills list */}
-            <div className="flex flex-wrap gap-2.5 mt-auto">
+            <div className="flex flex-wrap gap-3 mt-auto relative z-20">
               {items.map((skill, j) => (
-                <motion.span
+                <motion.div
                   key={j}
                   whileHover={{ scale: 1.05, y: -2 }}
-                  className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs text-slate-300 font-bold uppercase tracking-wider hover:text-white hover:border-white/20 transition-all cursor-default shadow-sm hover:shadow-md"
+                  className="flex items-center gap-2.5 px-4 py-2 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all cursor-default shadow-sm hover:shadow-md hover:border-white/20 group/skill"
                   style={{ hoverBackgroundColor: `${color}10` }}
                 >
-                  {skill}
-                </motion.span>
+                  <span className="text-lg opacity-80 group-hover/skill:opacity-100 group-hover/skill:scale-110 transition-all duration-300 drop-shadow-md">
+                    {skillIconMap[skill] || <Sparkles size={14} className="text-slate-400" />}
+                  </span>
+                  <span className="text-xs text-slate-300 font-bold uppercase tracking-wider group-hover/skill:text-white transition-colors">
+                    {skill}
+                  </span>
+                </motion.div>
               ))}
             </div>
           </div>
