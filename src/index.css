@@ -297,51 +297,68 @@
     box-shadow: 0 0 30px rgba(245, 158, 11, 0.3), inset 0 0 15px rgba(245, 158, 11, 0.2);
   }
 
-  .hyper-logo-outer {
-    @apply relative flex items-center justify-center transition-all duration-700;
-    filter: drop-shadow(0 0 15px rgba(0, 136, 255, 0.4));
+  .premium-glow-button {
+    @apply relative overflow-hidden transition-all duration-500 shadow-[0_0_20px_rgba(6,182,212,0.2)];
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.8), rgba(59, 130, 246, 0.8));
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  .hyper-logo-shell {
-    @apply relative flex items-center justify-center p-px overflow-hidden transition-all duration-500;
-    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-    background: linear-gradient(135deg, #0088ff, #00e1ff, #0088ff);
-    background-size: 200% 200%;
-    animation: gradient-shift 4s ease infinite;
+  .premium-glow-button::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.4) 0%, transparent 60%);
   }
 
-  .hyper-logo-glass {
-    @apply relative flex items-center justify-center bg-[#050816] rounded-sm overflow-hidden;
-    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-    width: calc(100% - 4px);
-    height: calc(100% - 4px);
-    background: linear-gradient(135deg, rgba(0, 136, 255, 0.4), rgba(0, 50, 100, 0.8));
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: inset 0 4px 15px rgba(255, 255, 255, 0.2);
+  .premium-glow-button:hover::before {
+    @apply opacity-100;
   }
 
-  .hyper-logo-sheen {
-    @apply absolute inset-0 pointer-events-none;
-    background: linear-gradient(
-      105deg,
-      transparent 30%,
-      rgba(255, 255, 255, 0.6) 45%,
-      rgba(255, 255, 255, 0.1) 50%,
-      transparent 70%
-    );
-    background-size: 200% 200%;
-    animation: hyper-sheen 3s infinite;
+  .premium-glow-button:hover {
+    @apply shadow-[0_0_40px_rgba(6,182,212,0.6)] -translate-y-1;
+    border-color: rgba(255, 255, 255, 0.4);
   }
 
-  @keyframes hyper-sheen {
-    0% { background-position: -150% -150%; }
-    100% { background-position: 150% 150%; }
+  .premium-glass-button {
+    @apply relative bg-white/5 backdrop-blur-md border border-white/10 transition-all duration-500 overflow-hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   }
 
-  .hyper-logo-outer:hover {
-    transform: scale(1.1) rotate(5deg);
-    filter: drop-shadow(0 0 25px rgba(0, 136, 255, 0.8));
+  .premium-glass-button::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full transition-transform duration-700;
+  }
+
+  .premium-glass-button:hover::after {
+    @apply translate-x-full;
+  }
+
+  .premium-glass-button:hover {
+    @apply bg-white/10 border-cyan-500/40 shadow-[0_0_25px_rgba(6,182,212,0.2)] -translate-y-1;
+  }
+
+  .social-icon-glow {
+    @apply relative flex items-center justify-center bg-white/3 border border-white/5 transition-all duration-500 overflow-hidden;
+  }
+
+  .social-icon-glow::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 transition-opacity duration-500;
+  }
+
+  .social-icon-glow:hover::before {
+    @apply opacity-100;
+  }
+
+  .social-icon-glow:hover {
+    @apply -translate-y-1.5 border-white/20 shadow-[0_10px_30px_rgba(0,0,0,0.5)];
+  }
+
+  .social-icon-glow.github:hover {
+    @apply shadow-[0_0_25px_rgba(255,100,255,0.2)] border-purple-500/30 text-white;
+  }
+
+  .social-icon-glow.linkedin:hover {
+    @apply shadow-[0_0_25px_rgba(59,130,246,0.3)] border-blue-500/30 text-blue-400;
   }
 
 }

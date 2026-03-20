@@ -80,6 +80,15 @@ const Hero = () => {
     setTimeout(() => setShowContent(true), 100);
   };
 
+  const handleMouseMove = (e) => {
+    const btn = e.currentTarget;
+    const rect = btn.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    btn.style.setProperty('--x', `${x}%`);
+    btn.style.setProperty('--y', `${y}%`);
+  };
+
   return (
     <section id="hero" className="section-transition min-h-screen flex items-center justify-center relative overflow-hidden bg-[#050816] pt-24 lg:pt-0">
 
@@ -219,31 +228,30 @@ const Hero = () => {
                     smooth={true}
                     duration={500}
                     offset={-70}
-                    className="group relative flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-2xl font-bold transition-all hover:scale-105 active:scale-95 cursor-pointer shadow-[0_0_30px_rgba(6,182,212,0.4)] text-sm overflow-hidden"
+                    onMouseMove={handleMouseMove}
+                    className="premium-glow-button flex items-center justify-center gap-3 text-white px-10 py-5 rounded-2xl font-black transition-all hover:scale-105 active:scale-95 cursor-pointer text-sm uppercase tracking-widest"
                   >
-                    <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-                    <span className="relative z-10 flex items-center gap-2">
-                       <Sparkles size={16} className="text-white" /> View Projects
-                    </span>
+                    <Sparkles size={18} className="text-white animate-pulse" /> View Projects
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </Link>
 
                   <a
                     href={personalInfo.resume}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-2 bg-white/5 backdrop-blur text-white px-8 py-4 rounded-2xl font-medium hover:bg-white/10 transition-all border border-white/10 hover:border-cyan-500/40 text-sm shadow-xl"
+                    className="premium-glass-button flex items-center gap-3 text-white px-10 py-5 rounded-2xl font-bold text-sm uppercase tracking-widest"
                   >
-                    Resume <FileText size={18} className="group-hover:scale-110 transition-transform text-cyan-400" />
+                    Resume <FileText size={18} className="text-cyan-400" />
                   </a>
 
-                  <div className="flex gap-3 ml-0 lg:ml-2">
+                  <div className="flex gap-4 ml-0 lg:ml-2">
                     <a href={personalInfo.github} target="_blank" rel="noopener noreferrer"
-                      className="p-4 bg-white/5 rounded-2xl text-slate-400 hover:text-white transition-all hover:scale-110 border border-white/5 hover:border-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-                      <Github size={20} />
+                      className="social-icon-glow github w-14 h-14 rounded-2xl text-slate-400 transition-all">
+                      <Github size={22} />
                     </a>
                     <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer"
-                      className="p-4 bg-white/5 rounded-2xl text-slate-400 hover:text-blue-400 transition-all hover:scale-110 border border-white/5 hover:border-blue-500/30 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]">
-                      <Linkedin size={20} />
+                      className="social-icon-glow linkedin w-14 h-14 rounded-2xl text-slate-400 transition-all">
+                      <Linkedin size={22} />
                     </a>
                   </div>
                 </motion.div>
