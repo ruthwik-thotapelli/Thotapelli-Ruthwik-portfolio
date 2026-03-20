@@ -115,9 +115,13 @@ const WhyMe = () => {
           className="text-center p-12 bg-white/3 rounded-3xl border border-white/5 relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5" />
-          <div className="w-16 h-16 branded-logo-container mx-auto mb-8">
-            <div className="premium-icon-glare" />
-            <span className="text-4xl font-black text-white leading-none relative z-10 italic pr-0.5">R</span>
+          <div className="w-20 h-20 hyper-logo-outer mx-auto mb-10">
+            <div className="hyper-logo-shell w-full h-full">
+              <div className="hyper-logo-glass">
+                <div className="hyper-logo-sheen" />
+                <span className="text-4xl font-black text-white leading-none relative z-10 italic pr-0.5">R</span>
+              </div>
+            </div>
           </div>
           <h3 className="text-2xl md:text-3xl font-black text-white mb-4 tracking-tighter relative z-10">
             Ready for <span className="gradient-text">Production Roles</span>.

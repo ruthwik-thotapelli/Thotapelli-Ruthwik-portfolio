@@ -92,10 +92,14 @@ const About = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="w-16 h-16 branded-logo-container group-hover:rotate-6 transition-transform duration-500"
+                className="w-20 h-20 hyper-logo-outer group-hover:rotate-12 transition-all duration-700"
               >
-                <div className="premium-icon-glare" />
-                <span className="text-4xl font-black text-white leading-none relative z-10 italic pr-0.5 drop-shadow-xl">R</span>
+                <div className="hyper-logo-shell w-full h-full">
+                  <div className="hyper-logo-glass">
+                    <div className="hyper-logo-sheen" />
+                    <span className="text-4xl font-black text-white leading-none relative z-10 italic pr-0.5 drop-shadow-2xl">R</span>
+                  </div>
+                </div>
               </motion.div>
               <div className="absolute -inset-2 bg-blue-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>

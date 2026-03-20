@@ -55,9 +55,13 @@ const CaseStudy = ({ project, isOpen, onClose }) => {
               {/* Header Bar - Like a Navbar for the modal */}
               <div className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 md:py-6 px-6 md:px-12 flex justify-between items-center bg-black/40 backdrop-blur-xl border-b border-white/5`}>
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 branded-logo-container group">
-                    <div className="premium-icon-glare" />
-                    <span className="text-2xl font-black text-white leading-none relative z-10 italic pr-0.5">R</span>
+                  <div className="w-12 h-12 hyper-logo-outer group">
+                    <div className="hyper-logo-shell w-full h-full">
+                      <div className="hyper-logo-glass">
+                        <div className="hyper-logo-sheen" />
+                        <span className="text-2xl font-black text-white leading-none relative z-10 italic pr-0.5">R</span>
+                      </div>
+                    </div>
                   </div>
                   <div className="flex flex-col">
                     <div className="inline-flex items-center gap-2 text-[10px] font-bold text-cyan-400 uppercase tracking-[0.2em]">
