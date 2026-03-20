@@ -80,6 +80,18 @@ const About = () => {
               <User size={14} className="text-pink-500" /> Professional Persona
             </div>
             
+            <div className="relative group mb-4">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0088ff] to-[#0055ff] p-0.5 shadow-2xl shadow-blue-500/20 group-hover:rotate-6 transition-transform duration-500 overflow-hidden"
+              >
+                <img src="/personal-logo.png" alt="logo" className="w-full h-full object-cover rounded-[0.9rem]" />
+              </motion.div>
+              <div className="absolute -inset-2 bg-blue-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </div>
+
             <h2 className="text-5xl md:text-7xl font-black text-white leading-[1.1] tracking-tighter">
               Crafting <span className="text-[#0088ff]">Future-Ready</span> Engineering Solutions.
             </h2>

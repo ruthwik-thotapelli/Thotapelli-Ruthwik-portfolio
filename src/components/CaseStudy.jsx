@@ -45,28 +45,46 @@ const CaseStudy = ({ project, isOpen, onClose }) => {
           >
             {/* Dynamic Interactive Background */}
             <div className="absolute inset-0 z-0 pointer-events-none h-full w-full fixed">
-              <img src={project.image} alt="bg" className="w-full h-full object-cover opacity-20 scale-105 blur-md mix-blend-screen" />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#050816]/50 via-[#050816]/70 to-[#050816]" />
+              <img src={project.image} alt="bg" className="w-full h-full object-cover opacity-40 scale-105 blur-lg" />
+              <div className="absolute inset-0 bg-[#050816]/70" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050816]/90 to-[#050816]" />
             </div>
 
             <div className="relative z-10">
-              {/* Close */}
-              <button
-                onClick={onClose}
-                className="absolute top-6 right-6 z-50 w-12 h-12 rounded-2xl bg-black/50 hover:bg-white/10 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-all backdrop-blur-md"
-              >
-                <X size={24} />
-              </button>
+              {/* Header Bar - Like a Navbar for the modal */}
+              <div className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6 px-12 flex justify-between items-center bg-black/40 backdrop-blur-xl border-b border-white/5`}>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#0088ff] flex items-center justify-center shadow-lg relative overflow-hidden group">
+                    <span className="text-2xl font-black text-white leading-none relative z-10 italic pr-0.5">R</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <div className="inline-flex items-center gap-2 text-[10px] font-bold text-cyan-400 uppercase tracking-[0.2em]">
+                      <Terminal size={12} /> Case Study
+                    </div>
+                    <span className="text-lg font-black text-white tracking-tight">{project.title}</span>
+                  </div>
+                </div>
+                
+                <button
+                  onClick={onClose}
+                  className="w-12 h-12 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-all backdrop-blur-md"
+                >
+                  <X size={24} />
+                </button>
+              </div>
 
-              {/* Header Hero */}
-              <div className="relative h-[45vh] min-h-[400px] overflow-hidden">
+              {/* Top Hero Spacer */}
+              <div className="h-24" />
+
+              {/* Header Hero Section */}
+              <div className="relative h-[40vh] min-h-[350px] overflow-hidden mx-12 mt-4 rounded-[3rem] border border-white/10 shadow-3xl">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover opacity-30 scale-105 blur-sm"
+                  className="w-full h-full object-cover opacity-60 scale-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-[#050816]/60 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#050816] to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-black/20" />
                 
                 <div className="absolute bottom-12 left-12 w-full max-w-5xl pr-12">
                   <motion.div
@@ -74,16 +92,13 @@ const CaseStudy = ({ project, isOpen, onClose }) => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
                   >
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-[10px] font-bold text-cyan-400 border border-cyan-500/30 rounded-full uppercase tracking-widest bg-cyan-500/10 backdrop-blur-md">
-                      <Terminal size={12} /> Case Study
-                    </div>
-                    <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-4 drop-shadow-2xl">{project.title}</h1>
-                    <p className="text-xl md:text-2xl text-slate-300 font-medium max-w-2xl drop-shadow-lg">{project.description}</p>
+                    <h1 className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-4 drop-shadow-2xl">{project.title}</h1>
+                    <p className="text-xl md:text-2xl text-slate-200 font-medium max-w-2xl drop-shadow-lg">{project.description}</p>
                     
-                    <div className="mt-10 flex flex-wrap gap-4 relative z-20">
+                    <div className="mt-8 flex flex-wrap gap-4 relative z-20">
                       <button 
                         onClick={() => setDemoOpen(true)}
-                        className="flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 rounded-full text-black font-black uppercase tracking-widest transition-all shadow-lg shadow-cyan-500/25 hover:scale-105 text-sm"
+                        className="flex items-center gap-3 px-8 py-4 bg-[#0088ff] hover:bg-[#0077ee] rounded-full text-white font-black uppercase tracking-widest transition-all shadow-lg shadow-blue-500/25 hover:scale-105 text-sm"
                       >
                         <Play size={18} fill="currentColor" /> Explore My Work
                       </button>
