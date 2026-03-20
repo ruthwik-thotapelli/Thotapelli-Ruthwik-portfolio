@@ -16,13 +16,23 @@ const Footer = () => {
 
           {/* Brand/About Section */}
           <div className="lg:col-span-5 space-y-10">
-            <Link to="hero" smooth={true} duration={500} className="cursor-pointer group flex items-center gap-3">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-xl group-hover:rotate-12 transition-transform duration-300">
-                <Terminal size={20} className="sm:size-24" />
+            <Link to="hero" smooth={true} duration={500} className="cursor-pointer group flex items-center gap-4">
+              <div className="w-14 h-14 hyper-logo-outer">
+                <div className="hyper-logo-shell w-full h-full">
+                  <div className="hyper-logo-glass">
+                    <div className="hyper-logo-sheen" />
+                    <span className="text-3xl font-black text-white leading-none relative z-10 italic pr-0.5">R</span>
+                  </div>
+                </div>
               </div>
-              <span className="text-2xl sm:text-3xl font-black text-white tracking-widest uppercase">
-                Thotapelli Ruthwik<span className="text-indigo-500">.</span>
-              </span>
+              <div className="flex flex-col">
+                <span className="text-xl sm:text-2xl font-black text-white tracking-widest uppercase leading-none">
+                  Thotapelli
+                </span>
+                <span className="text-xl sm:text-2xl font-black text-cyan-400 tracking-widest uppercase leading-none">
+                  Ruthwik<span className="text-white">.</span>
+                </span>
+              </div>
             </Link>
 
             <p className="text-slate-500 text-base sm:text-lg leading-relaxed max-w-sm font-medium">
