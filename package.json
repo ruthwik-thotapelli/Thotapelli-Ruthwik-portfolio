@@ -10,12 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.9.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.36.0",
     "lucide-react": "^0.577.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "react-parallax-tilt": "^1.7.320",
     "react-scroll": "^1.9.3",
+    "react-simple-typewriter": "^5.0.1",
     "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {

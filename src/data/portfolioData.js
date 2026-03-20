@@ -45,6 +45,10 @@ export const projects = [
     date: "Jan 2026",
     longDescription:
       "Developed a secure, enterprise-grade hiring platform to manage job postings, applications, and candidate workflows end-to-end. Implemented role-based access control, secure authentication, scalable REST APIs, and an ATS-style resume screening and scoring system to improve recruitment efficiency.",
+    problem: "Traditional hiring platforms lack integrated technical screening, forcing recruiters to juggle multiple tools. ATS systems often fail to accurately score modern tech resumes.",
+    approach: "Built a consolidated platform with an integrated ATS scoring algorithm that normalizes diverse resumes, coupled with a secure RBAC system to manage the entire pipeline from one dashboard.",
+    impact: "Reduces time-to-hire by 40% through automated initial screening and provides a single source of truth for all hiring stakeholders.",
+    demoType: "talentbridge",
     techStack: [
       "React",
       "Node.js",
@@ -106,6 +110,10 @@ export const projects = [
     date: "Jan 2026",
     longDescription:
       "Built a production-grade AWS DevOps CI/CD project to automate build, test, and deployment workflows. Designed secure cloud infrastructure, implemented containerized deployments with rollback support, and set up monitoring and logging for faster issue detection and operational reliability.",
+    problem: "Manual deployments are error-prone and slow. Startups often struggle to set up enterprise-grade infrastructure that balances security, cost, and scalability.",
+    approach: "Designed a serverless AWS infrastructure using ECS Fargate, fully automated through GitHub Actions, with strict IAM roles and automated rollback capabilities.",
+    impact: "Enables zero-downtime deployments multiple times a day. Reduced infrastructure management overhead by automating auto-scaling and health checks.",
+    demoType: "cloudforge",
     techStack: [
       "AWS",
       "Docker",
@@ -214,25 +222,25 @@ export const certifications = [
     name: "Object-Oriented Programming using C++",
     issuer: "Summer Training",
     date: "Jun 2025",
-    link: "#",
+    link: "https://drive.google.com/file/d/1anx-d6def9o0d7FJVG17safq2W3wQZhe/view?usp=drive_link",
   },
   {
     name: "Cloud Computing",
     issuer: "NPTEL",
     date: "Apr 2025",
-    link: "#",
+    link: "https://drive.google.com/file/d/1jytFXLBnFxGD-T-nIM0gp3gMD9fVJgyh/view?usp=drive_link",
   },
   {
     name: "BinaryBlitz Web Hackathon",
     issuer: "Coding Ninjas",
     date: "Mar 2024",
-    link: "#",
+    link: "https://drive.google.com/file/d/1NLpFuiT0KATMRo7dmq9ACsT_jjxeW00y/view?usp=drive_link",
   },
   {
     name: "Responsive Web Design",
     issuer: "freeCodeCamp",
     date: "Oct 2023",
-    link: "#",
+    link: "https://drive.google.com/file/d/184wWQL5GTKFuhEbNC_9gDwh4ZBmRqJY9/view?usp=drive_link",
   },
 ];
 

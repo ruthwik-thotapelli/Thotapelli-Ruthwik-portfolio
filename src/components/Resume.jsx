@@ -6,15 +6,13 @@ import { personalInfo } from '../data/portfolioData';
 const Resume = () => {
   const highlights = [
     { title: "MERN Stack Expert", body: "End-to-end development with MongoDB, Express, React, Node.js.", icon: <Sparkles size={20} /> },
-    { title: "AWS Cloud & DevOps", body: "Automated infrastructures, containerized deployments, and CI/CD pipelines.", icon: <Sparkles size={20} /> },
-    { title: "Enterprise Security", body: "Secure systems with JWT, RBAC, and production-ready architectures.", icon: <Sparkles size={20} /> },
-    { title: "Collaborative Spirit", body: "Agile methodologies, Git flow, and effective team communication.", icon: <Sparkles size={20} /> },
+    { title: "Cloud & DevOps", body: "Architecting automated infrastructures and CI/CD pipelines.", icon: <Sparkles size={20} /> },
+    { title: "System Security", body: "Secure architectures with JWT, RBAC, and auth best practices.", icon: <Sparkles size={20} /> },
+    { title: "Agile & Git", body: "Fluent in modern development workflows and team collaboration.", icon: <Sparkles size={20} /> },
   ];
 
   return (
     <section id="resume" className="py-24 relative overflow-hidden bg-[#050816]">
-      <div className="blob w-[500px] h-[500px] bg-indigo-500/10 top-[-10%] right-[-10%] animate-pulse-glow" />
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
           <motion.div
@@ -22,14 +20,14 @@ const Resume = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center gap-2 px-6 py-2.5 mb-6 text-sm font-black text-indigo-300 glass rounded-full uppercase tracking-widest glow-blue border border-white/5">
-              <FileText size={16} className="text-blue-400" /> Professional Credentials
+            <div className="inline-flex items-center gap-2 px-6 py-2 mb-6 text-xs font-bold text-cyan-400 glass-morphism rounded-full uppercase tracking-[0.3em] border border-cyan-500/30">
+              <FileText size={14} /> Professional Credentials
             </div>
-            <h2 className="text-4xl md:text-7xl font-black text-white mb-6 tracking-tighter">
+            <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter">
               The <span className="gradient-text">Complete</span> Profile.
             </h2>
-            <p className="text-lg text-slate-400 max-w-2xl mx-auto font-medium">
-              A comprehensive summary of my skills, experiences, and technical capabilities in a recruiter-friendly format.
+            <p className="text-xl text-slate-400 max-w-2xl mx-auto font-medium">
+              A comprehensive summary of my technical journey and capabilities, optimized for <span className="text-white">ATS standards</span>.
             </p>
           </motion.div>
         </div>
@@ -38,83 +36,80 @@ const Resume = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="glass-vibrant rounded-[3rem] p-8 md:p-20 border border-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.5)] relative overflow-hidden gradient-border"
+          className="glass-morphism rounded-[3rem] p-12 md:p-20 border border-white/10 shadow-3xl relative overflow-hidden"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 relative z-10">
             
-            {/* Left Column: Summary & Call to Action */}
             <div className="lg:col-span-7 space-y-12">
               <div className="space-y-4">
-                <h3 className="text-3xl font-black text-white tracking-tight flex items-center gap-3">
-                  Summary for <span className="text-indigo-400">Recruiters</span> <UserCheck size={28} className="text-pink-500" />
+                <h3 className="text-3xl font-black text-white tracking-tighter flex items-center gap-4">
+                  Engineering <span className="text-cyan-400">Summary</span> <UserCheck size={28} className="text-pink-500" />
                 </h3>
-                <p className="text-slate-400 text-lg leading-relaxed font-bold">
-                  Bridging the gap between engineering excellence and business impact. Optimized for ATS and production standards.
+                <p className="text-slate-400 text-lg leading-relaxed font-medium capitalize">
+                  bridging the gap between code quality and business impact through architectural rigor and modern standards.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {highlights.map((item, i) => (
                   <div key={i} className="flex gap-5 group">
-                    <div className="mt-1 w-12 h-12 rounded-xl glass-vibrant flex items-center justify-center text-indigo-400 border border-white/5 group-hover:bg-indigo-500 group-hover:text-white transition-all shadow-xl">
+                    <div className="mt-1 w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-cyan-400 border border-white/10 group-hover:bg-cyan-500 group-hover:text-black transition-all">
                       {item.icon}
                     </div>
                     <div>
-                      <h4 className="text-white font-black text-sm mb-1">{item.title}</h4>
+                      <h4 className="text-white font-black text-sm mb-1 uppercase tracking-tight">{item.title}</h4>
                       <p className="text-slate-500 text-xs font-medium leading-relaxed">{item.body}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="flex flex-wrap gap-5 pt-8">
-                <a
+              <div className="flex flex-wrap gap-6 pt-8">
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   href={personalInfo.resume}
                   download
-                  className="group flex items-center gap-3 bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 text-white px-10 py-5 rounded-2xl font-black text-base shadow-2xl glow-purple hover:scale-105 active:scale-95 transition-all"
+                  className="flex items-center gap-3 bg-white text-black px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest shadow-2xl transition-all"
                 >
-                  Download CV <Download size={20} className="group-hover:translate-y-1 transition-transform" />
-                </a>
-                <a
+                  Download CV <Download size={20} />
+                </motion.a>
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   href={personalInfo.resume}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 glass-vibrant text-white px-10 py-5 rounded-2xl font-black text-base border border-white/10 hover:bg-white/10 hover:scale-105 active:scale-95 transition-all shadow-xl"
+                  className="flex items-center gap-3 glass-morphism text-white px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest border border-white/20 hover:bg-white/10 transition-all shadow-xl"
                 >
                   Quick View <ExternalLink size={20} />
-                </a>
+                </motion.a>
               </div>
             </div>
 
-            {/* Right Column: Visual Preview */}
             <div className="lg:col-span-5 flex items-center justify-center">
               <motion.div
-                whileHover={{ rotateY: 10, rotateX: -5 }}
-                className="w-full aspect-[3/4] glass-vibrant rounded-[2.5rem] p-12 flex flex-col items-center justify-center text-center relative group border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] cursor-default overflow-hidden"
+                whileHover={{ scale: 1.02, rotateY: 5 }}
+                className="w-full aspect-[3/4.5] glass-morphism rounded-[2.5rem] p-12 flex flex-col items-center justify-center text-center relative group border border-white/20 shadow-3xl"
               >
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-pink-500" />
-                
-                <div className="w-24 h-24 rounded-3xl bg-white/5 flex items-center justify-center text-indigo-500 mb-8 border border-white/5 shadow-inner group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
-                  <FileText size={56} />
+                <div className="w-24 h-24 rounded-3xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-8 border border-cyan-500/20 group-hover:scale-110 transition-transform">
+                  <FileText size={48} />
                 </div>
                 
-                <h4 className="text-2xl font-black text-white mb-3">Resume Preview</h4>
-                <p className="text-slate-400 font-medium mb-10 leading-relaxed text-sm">
-                  Available in PDF format.<br />High-resolution and print-ready.
+                <h4 className="text-2xl font-black text-white mb-3 uppercase tracking-tight">Resume PDF</h4>
+                <p className="text-slate-500 font-bold mb-10 leading-relaxed text-sm">
+                  ATS Optimized Structure<br />Available for Download
                 </p>
                 
-                <div className="px-6 py-3 glass rounded-2xl border border-white/5">
-                  <span className="text-[0.6rem] font-black text-indigo-400 uppercase tracking-[0.3em]">Scored Excellent by ATS</span>
+                <div className="px-6 py-3 bg-white/5 rounded-xl border border-white/10">
+                  <span className="text-[10px] font-black text-cyan-400 uppercase tracking-[0.3em]">Scored Excellent by recruitment AI</span>
                 </div>
-
-                <div className="absolute bottom-[-20%] right-[-20%] w-64 h-64 bg-indigo-500/5 group-hover:bg-indigo-500/10 rounded-full blur-3xl transition-all" />
               </motion.div>
             </div>
           </div>
           
-          <div className="absolute top-0 right-0 w-80 h-80 bg-purple-600/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-600/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
+          <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/5 rounded-full blur-[120px]" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-pink-500/5 rounded-full blur-[120px]" />
         </motion.div>
       </div>
     </section>
