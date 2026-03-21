@@ -217,7 +217,7 @@
 
   .hyper-logo-shell {
     @apply relative flex items-center justify-center p-[2px] overflow-hidden transition-all duration-500;
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     background: linear-gradient(135deg, #0088ff, #00e1ff, #0088ff);
     background-size: 200% 200%;
     animation: gradient-shift 4s ease infinite;
@@ -225,7 +225,7 @@
 
   .hyper-logo-glass {
     @apply relative flex items-center justify-center bg-[#050816] overflow-hidden;
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     width: calc(100% - 6px);
     height: calc(100% - 6px);
     background: linear-gradient(135deg, rgba(0, 136, 255, 0.4), rgba(0, 50, 100, 0.8));
@@ -380,7 +380,7 @@
     @apply shadow-[0_0_25px_rgba(59,130,246,0.3)] border-blue-500/30 text-blue-400;
   }
 
-  /* Hyper-Premium Diamond Logo */
+  /* Hyper-Premium Hexagonal Logo */
   .hyper-logo-outer {
     @apply relative flex items-center justify-center transition-all duration-700;
     filter: drop-shadow(0 0 15px rgba(0, 136, 255, 0.4));
@@ -388,7 +388,7 @@
 
   .hyper-logo-shell {
     @apply relative flex items-center justify-center p-[2px] transition-all duration-500;
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     background: linear-gradient(135deg, #0088ff, #00e1ff, #0088ff);
     background-size: 200% 200%;
     animation: gradient-shift 4s ease infinite;
@@ -396,7 +396,7 @@
 
   .hyper-logo-glass {
     @apply relative flex items-center justify-center bg-[#050816] overflow-hidden;
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     width: calc(100% - 6px);
     height: calc(100% - 6px);
     background: linear-gradient(135deg, rgba(0, 136, 255, 0.4), rgba(0, 50, 100, 0.8));
@@ -424,11 +424,11 @@
   }
 
   .hyper-logo-outer:hover {
-    transform: scale(1.1) rotate(45deg); /* Spin to accent diamond shape */
+    transform: scale(1.1) rotate(60deg); /* Full hexagonal rotation step */
   }
   
   .hyper-logo-outer:hover span {
-    transform: rotate(-45deg); /* Keep R upright */
+    transform: rotate(-60deg); /* Keep R upright */
   }
 
 }
