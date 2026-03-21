@@ -16,22 +16,13 @@ const Footer = () => {
 
           {/* Brand/About Section */}
           <div className="lg:col-span-5 space-y-10">
-            <Link to="hero" smooth={true} duration={500} className="cursor-pointer group flex items-start sm:items-center gap-6">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 diamond-terminal-shell transition-transform duration-700 group-hover:rotate-[360deg]">
-                <div className="diamond-terminal-glass relative">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-blue-500/20 animate-pulse" />
-                  <Terminal size={24} className="text-white relative z-10" />
-                </div>
+            <Link to="hero" smooth={true} duration={500} className="cursor-pointer group flex items-center gap-3">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-xl group-hover:rotate-12 transition-transform duration-300">
+                <Terminal size={20} className="sm:size-24" />
               </div>
-              <div className="flex flex-col">
-                <span className="text-2xl sm:text-4xl font-black text-white tracking-tighter leading-none hyper-glow-text group-hover:scale-105 transition-transform duration-500">
-                  Thotapelli
-                </span>
-                <span className="text-2xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 tracking-tighter leading-none mt-1">
-                  Ruthwik<span className="text-white">.</span>
-                </span>
-                <div className="h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-cyan-400 to-purple-600 transition-all duration-700 mt-2 shadow-[0_0_15px_rgba(6,182,212,0.8)]" />
-              </div>
+              <span className="text-2xl sm:text-3xl font-black text-white tracking-widest uppercase">
+                Thotapelli Ruthwik<span className="text-indigo-500">.</span>
+              </span>
             </Link>
 
             <p className="text-slate-500 text-base sm:text-lg leading-relaxed max-w-sm font-medium">

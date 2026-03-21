@@ -90,7 +90,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="section-transition min-h-screen flex items-center justify-center relative overflow-hidden bg-[#050816] pt-24 lg:pt-0">
+    <section id="hero" className="section-transition min-h-screen flex items-center justify-center relative overflow-hidden bg-[#050816] pt-28 lg:pt-32 pb-20">
 
       {/* Particle Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -300,7 +300,7 @@ const Hero = () => {
              <motion.div
                animate={{ opacity: [0.3, 1, 0.3], y: [0, 8, 0] }}
                transition={{ repeat: Infinity, duration: 2.5 }}
-               className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2"
+               className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 z-30"
              >
                <div className="w-px h-12 bg-gradient-to-b from-cyan-500 to-transparent" />
                <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-cyan-500">Scroll</span>
